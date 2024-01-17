@@ -19,8 +19,6 @@ require("mason-lspconfig").setup({
 	},
 })
 
-local lspconfig = require("lspconfig")
-
 local cmp = require("cmp")
 local cmp_action = require("lsp-zero").cmp_action()
 
