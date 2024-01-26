@@ -4,6 +4,7 @@ lsp.on_attach(function(client, bufnr)
 	-- see :help lsp-zero-keybindings
 	-- to learn the available actions
 	lsp.default_keymaps({ buffer = bufnr })
+	vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, { buffer = bufnr })
 end)
 
 require("neodev").setup({})
@@ -27,8 +28,8 @@ cmp.setup({
 		{ name = "path" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
-		{ name = "luasnip",                keyword_length = 2 },
 		{ name = "buffer",                 keyword_length = 3 },
+		{ name = "luasnip",                keyword_length = 2 },
 		{ name = "nvim_lsp_signature_help" },
 	},
 	formatting = lsp.cmp_format(),
